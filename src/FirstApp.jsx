@@ -17,9 +17,9 @@ const suma = () => {
 
 // export default function FirstApp(props) { // Lo comun es usar desestructuracion....
 export default function FirstApp({
-    title = 'Soy un default value property',
-    subTitle,
-    propValue,
+    title = 'title: Soy un default value property',
+    subTitle = 'subtitle: soy un default prop',
+    propValue = 5,
     name}) {
     // if (!propValue) {
     //     throw new Error('porpValue no existe')
@@ -39,10 +39,11 @@ export default function FirstApp({
             <p>{arr}</p>
             <code>{JSON.stringify (obj)}</code>
             <div>{ suma() }</div> */}
-            <h1>{title}</h1>
-            <h2>{subTitle}</h2>
+            <h1 data-testid='test-title'>{title}</h1>
+            <div>{subTitle}</div>
+            <div>{subTitle}</div>
             <h3>{name}</h3>
-            <p>{ propValue }</p>
+            <p>{propValue}</p>
         </>
   )
 }
@@ -52,8 +53,9 @@ FirstApp.propTypes = {
     subTitle: PropTypes.string.isRequired 
 }
 
-FirstApp.defaultProps = {
-    subTitle:'valor default definido en los defaultProps',
-    propValue:null,
-    name:'Antonio Hernandez'
-}
+// FirstApp.defaultProps = {
+//   subTitle: "subTitle (default): valor definido en defaultProps",
+//   propValue: 0,
+//   name: "name (default): Antonio Hernandez",
+// };
+
